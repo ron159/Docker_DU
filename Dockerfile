@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:18.04
 
 LABEL AUTHOR=ron<zlronron159@gmail.com>
 
