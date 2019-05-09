@@ -12,12 +12,12 @@ while true; do  #提取下载文件根路径，如把/data/a/b/c/d.jpg变成/dat
 	path=${path%/*}; 
 	if [ "$path" = "$downloadpath" ] && [ $2 -eq 1 ]  #如果下载的是单个文件
 		then
-		rclone move "$filepath" one:upload/     
+		rclone move "$filepath" gdteam:/     
 		exit 0
 	elif [ "$path" = "$downloadpath" ]   #文件夹
 		then							
 		while [[ "`ls -A "$filepath/"`" != "" ]]; do			
-		rclone move "$filepath"/ one:upload/"${filepath##*/}"/ --delete-empty-src-dirs				
+		rclone move "$filepath"/ gdteam:/"${filepath##*/}"/ --delete-empty-src-dirs				
 		done
 		rm -rf "$filepath/"	
 	      	exit 0
