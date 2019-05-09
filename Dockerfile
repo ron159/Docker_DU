@@ -4,7 +4,7 @@ LABEL AUTHOR=ron<zlronron159@gmail.com>
 
 WORKDIR /root
 ADD conf /root/conf
-COPY run.sh /root
+#COPY run.sh /root
 
 RUN buildDeps='curl wget vim aria2 unzip nginx' \
     && apt update \
