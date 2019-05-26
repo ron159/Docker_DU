@@ -8,7 +8,7 @@ ADD conf /root/downloader/conf
 
 RUN buildDeps='curl wget vim aria2 unzip nginx' \
     && apt update \
-    && apt upgrade -y \
+    #&& apt upgrade -y \
     && apt install -y $buildDeps \
     && apt purge -y --auto-remove $buildDeps \
     && mkdir /root/downloader/Dwonlad
