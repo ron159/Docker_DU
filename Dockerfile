@@ -23,7 +23,7 @@ RUN mkdir /root/dl/ariang \
     && chmod 777 index.html 
     #rclone
 RUN cd /root/dl \
-    && curl https://rclone.org/install.sh | bash 
+    && curl https://rclone.org/install.sh | bash \ 
     && cd /root/dl/conf \
     && chmod 777 autouoload.sh
 
