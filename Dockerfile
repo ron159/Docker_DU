@@ -21,12 +21,12 @@ RUN mkdir /root/downloader/ariang \
     && chmod 777 index.html 
     #rclone
 RUN cd /root/downloader \
-    && curl https://rclone.org/install.sh | bash \
+    && curl https://rclone.org/install.sh | bash 
     #&& cd /root/downloader/conf \
     #&& chmod 777 autouoload.sh
 
 
-VOLUME /root/downloader/Dwonlad
+#VOLUME /root/downloader/Dwonlad
 
 EXPOSE 6800 8000 22
 
