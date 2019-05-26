@@ -34,5 +34,5 @@ RUN cd /root/dl \
 #VOLUME /root/downloader/Download
 
 EXPOSE 80
-#CMD ["/bin/sh", "/root/dl/conf/run.sh" ]
+CMD ["/bin/sh", "/root/dl/conf/run.sh" ]
 
