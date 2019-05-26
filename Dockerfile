@@ -38,4 +38,5 @@ RUN mkdir /var/run/sshd \
 
 EXPOSE 80 6800 22
 ENTRYPOINT ["/root/dl/conf/run.sh"]
+CMD ["nginx", "-g", "daemon off;"]
 
