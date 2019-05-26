@@ -1,6 +1,6 @@
 #!/bin/bash
 
 do
-  /usr/bin/aria2c --conf-path="/root/dl/conf/aria2.conf" -D 
- # && service nginx start
+  /usr/bin/aria2c --conf-path="/root/dl/conf/aria2.conf" -D \
+  && /usr/sbin/nginx -c /root/dl/conf/nginx.conf
 done
