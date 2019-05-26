@@ -19,7 +19,10 @@ RUN mkdir /root/dl/ariang \
     && wget https://github.com/mayswind/AriaNg/releases/download/1.1.0/AriaNg-1.1.0.zip \
     && unzip AriaNg-1.1.0.zip \
     && rm -rf AriaNg-1.1.0.zip \
-    && chmod 777 index.html 
+    && chmod 777 index.html \
+    && rm -rf /var/www/html/ \
+    && mkdir /var/www/html \
+    && mv index.html /var/www/html/
     #rclone
 RUN cd /root/dl \
     && curl https://rclone.org/install.sh | bash \ 
