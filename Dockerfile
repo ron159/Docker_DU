@@ -6,7 +6,7 @@ WORKDIR /root/downloader
 ADD conf /root/downloader/conf
 #COPY run.sh /root
 
-RUN buildDeps='curl vim aria2 unzip nginx' \
+RUN buildDeps='curl wget vim aria2 unzip nginx' \
     && apt update \
     && apt upgrade -y \
     && apt install -y $buildDeps \
