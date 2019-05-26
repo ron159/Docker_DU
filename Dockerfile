@@ -10,10 +10,8 @@ RUN buildDeps='curl wget vim aria2 unzip nginx openssh-server' \
     && apt-get update \
     && apt upgrade -y \
     && apt-get install -y $buildDeps \
-    #&& apt-get purge -y --auto-remove $buildDeps \
     && rm -rf /var/lib/apt/lists/* \
-    && mkdir /Download \
-    && mv /root/dl/conf/nginx.conf /etc/nginx/nginx.conf
+    && mkdir /Download 
     #AriaNg
 RUN mkdir /root/dl/ariang \
     && cd /root/dl/ariang \
