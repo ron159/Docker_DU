@@ -15,7 +15,7 @@ RUN buildDeps='curl wget vim aria2 unzip nginx' \
     #AriaNg
 RUN mkdir /root/downloader/ariang \
     && cd /root/downloader/ariang \
-    && wget -N --no-check-certificate https://github.com/mayswind/AriaNg/releases/download/1.1.0/AriaNg-1.1.0.zip \
+    && wget https://github.com/mayswind/AriaNg/releases/download/1.1.0/AriaNg-1.1.0.zip \
     && unzip AriaNg-1.1.0.zip \
     && rm -rf AriaNg-1.1.0.zip \
     && chmod 777 index.html 
