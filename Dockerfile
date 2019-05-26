@@ -11,7 +11,9 @@ RUN buildDeps='curl wget vim aria2 unzip nginx' \
     && apt upgrade -y \
     && apt-get install -y $buildDeps \
     #&& apt-get purge -y --auto-remove $buildDeps \
-    && mkdir /root/dl/Download
+    && rm -rf /var/lib/apt/lists/* \
+    && mkdir /Download \
+    && mv /root/dl/conf/nginx.conf /etc/nginx/nginx.conf
     #AriaNg
 RUN mkdir /root/dl/ariang \
     && cd /root/dl/ariang \
@@ -22,11 +24,12 @@ RUN mkdir /root/dl/ariang \
     #rclone
 RUN cd /root/dl \
     && curl https://rclone.org/install.sh | bash 
-    #&& cd /root/downloader/conf \
-    #&& chmod 777 autouoload.sh
+    && cd /root/dl/conf \
+    && chmod 777 autouoload.sh
 
 
-#VOLUME /root/downloader/Dwonlad
+#VOLUME /root/downloader/Download
 
-EXPOSE 6800 8000 22
-
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+CMD ["aria2c", "--conf-path=/root/dl/conf/aria2.conf", "daemon off;"]
