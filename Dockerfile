@@ -37,5 +37,5 @@ RUN mkdir /var/run/sshd \
 #VOLUME /root/downloader/Download
 
 EXPOSE 80 6800 22
-CMD ["/bin/sh", "/root/dl/conf/run.sh"]
+ENTRYPOINT ["/root/dl/conf/run.sh"]
 
