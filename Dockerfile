@@ -11,19 +11,17 @@ RUN buildDeps='curl wget vim aria2 unzip nginx' \
     && apt upgrade \
     && apt install -y $buildDeps \
     && apt purge -y --auto-remove $buildDeps \
-    && mkdir /Dwonlad \
+    && mkdir /root/downloader/Dwonlad \
     #AriaNg
-    &&mkdir /root/ariang \
-    && cd /root/ariang \
+    &&mkdir /root/downloader/ariang \
+    && cd /root/downloader/ariang \
     && wget -N --no-check-certificate https://github.com/mayswind/AriaNg/releases/download/1.1.0/AriaNg-1.1.0.zip \
     && unzip AriaNg-1.1.0.zip \
     && rm -rf AriaNg-1.1.0.zip \
     && chmod 777 index.html \
     #rclone
-    && cd /root \
-    && wget -N --no-check-certificate https://downloads.rclone.org/v1.47.0/rclone-v1.47.0-linux-amd64.deb \
-    && dpkg -i rclone-v1.47.0-linux-amd64.deb \
-    && rm -rf rclone-v1.47.0-linux-amd64.deb \
+    && cd /root/downloader \
+    && curl https://rclone.org/install.sh | sudo bash \
     && chmod 777 /root/conf/autouoload.sh
 
 
