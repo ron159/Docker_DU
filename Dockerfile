@@ -33,5 +33,5 @@ RUN cd /root/dl \
 #VOLUME /root/downloader/Download
 
 EXPOSE 80
-CMD ["nginx", "-g", "daemon off;"]
-CMD ["aria2c", "--conf-path=/root/dl/conf/aria2.conf", "daemon off;"]
+CMD ["/bin/sh", "/root/dl/conf/run.sh" ]
+
