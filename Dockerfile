@@ -27,7 +27,8 @@ RUN cd /root/dl \
     && cd /root/dl/conf \
     && chmod 777 autoupload.sh \
     && touch aria2.session\
-    && chmod 777 aria2.session
+    && chmod 777 aria2.session \
+    && chmod +x run.sh
 
 
 #VOLUME /root/downloader/Download
