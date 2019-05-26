@@ -6,15 +6,14 @@ WORKDIR /root/downloader
 ADD conf /root/downloader/conf
 
 
-RUN buildDeps='curl vim aria2 unzip nginx' \
+RUN buildDeps='curl wget vim aria2 unzip nginx' \
     && apt-get update \
-    #&& apt upgrade -y \
+    && apt upgrade -y \
     && apt-get install -y $buildDeps \
-    && apt-get purge -y --auto-remove $buildDeps \
+    #&& apt-get purge -y --auto-remove $buildDeps \
     && mkdir /root/downloader/Dwonlad
     #AriaNg
 RUN mkdir /root/downloader/ariang \
-    && apt-get install -y wget \
     && cd /root/downloader/ariang \
     && wget https://github.com/mayswind/AriaNg/releases/download/1.1.0/AriaNg-1.1.0.zip \
     && unzip AriaNg-1.1.0.zip \
