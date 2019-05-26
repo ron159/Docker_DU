@@ -2,8 +2,8 @@ FROM ubuntu:18.04
 
 LABEL AUTHOR=ron<zlronron159@gmail.com>
 
-WORKDIR /root
-ADD conf /root/conf
+WORKDIR /root/downloader
+ADD conf /root/downloader/conf
 #COPY run.sh /root
 
 RUN buildDeps='curl wget vim aria2 unzip nginx' \
