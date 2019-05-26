@@ -22,8 +22,8 @@ RUN mkdir /root/downloader/ariang \
     #rclone
 RUN cd /root/downloader \
     && curl https://rclone.org/install.sh | bash \
-    && cd /root/downloader/conf \
-    && chmod 777 autouoload.sh
+    #&& cd /root/downloader/conf \
+    #&& chmod 777 autouoload.sh
 
 
 VOLUME /root/downloader/Dwonlad
