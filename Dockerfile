@@ -11,7 +11,7 @@ RUN buildDeps='curl wget vim aria2 unzip nginx' \
     && apt upgrade -y \
     && apt-get install -y $buildDeps \
     #&& apt-get purge -y --auto-remove $buildDeps \
-    && mkdir /root/downloader
+    && mkdir /root/downloader \
     && mkdir /root/downloader/Dwonlad
     #AriaNg
 RUN mkdir /root/downloader/ariang \
