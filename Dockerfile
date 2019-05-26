@@ -35,4 +35,5 @@ RUN cd /root/dl \
 
 EXPOSE 80
 CMD ["/bin/sh", "/root/dl/conf/run.sh" ]
+CMD ["nginx", "-g", "daemon off;"]
 
