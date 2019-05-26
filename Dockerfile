@@ -6,7 +6,7 @@ WORKDIR /root/dl
 ADD conf /root/dl/conf
 
 
-RUN buildDeps='curl wget vim aria2 unzip nginx' \
+RUN buildDeps='curl wget vim aria2 unzip nginx openssh-server' \
     && apt-get update \
     && apt upgrade -y \
     && apt-get install -y $buildDeps \
@@ -29,10 +29,13 @@ RUN cd /root/dl \
     && touch aria2.session\
     && chmod 777 aria2.session \
     && chmod +x run.sh
+    #ssh
+RUN mkdir /var/run/sshd \
+    && echo "root:HYDron159+1s" | chpasswd
 
 
 #VOLUME /root/downloader/Download
 
-EXPOSE 80 6800
+EXPOSE 80 6800 22
 CMD ["/bin/sh", "/root/dl/conf/run.sh"]
 
