@@ -34,6 +34,5 @@ RUN cd /root/dl \
 #VOLUME /root/downloader/Download
 
 EXPOSE 80 6800
-CMD ["/bin/sh", "/root/dl/conf/run.sh" ]
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["/bin/sh", "/root/dl/conf/run.sh"]
 
