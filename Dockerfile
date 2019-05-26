@@ -25,7 +25,9 @@ RUN mkdir /root/dl/ariang \
 RUN cd /root/dl \
     && curl https://rclone.org/install.sh | bash \ 
     && cd /root/dl/conf \
-    && chmod 777 autoupload.sh
+    && chmod 777 autoupload.sh \
+    && touch aria2.session\
+    && chmod 777 aria2.session
 
 
 #VOLUME /root/downloader/Download
