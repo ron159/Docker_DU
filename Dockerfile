@@ -16,9 +16,9 @@ RUN buildDeps='curl wget vim aria2 unzip nginx openssh-server' \
     #AriaNg
 RUN mkdir /root/dl/ariang \
     && cd /root/dl/ariang \
-    && wget https://github.com/mayswind/AriaNg/releases/download/1.1.0/AriaNg-1.1.0.zip \
-    && unzip AriaNg-1.1.0.zip \
-    && rm -rf AriaNg-1.1.0.zip \
+    && wget https://github.com/mayswind/AriaNg/releases/download/1.1.1/AriaNg-1.1.1-AllInOne.zip \
+    && unzip AriaNg-1.1.1-AllInOne.zip \
+    && rm -rf AriaNg-1.1.1-AllInOne.zip \
     && chmod 777 index.html \
     && rm -rf /var/www/html/ \
     && mkdir /var/www/html \
