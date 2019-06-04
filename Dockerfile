@@ -20,7 +20,7 @@ RUN rm -rf /var/www/html/ \
     && wget https://github.com/mayswind/AriaNg/releases/download/1.1.1/AriaNg-1.1.1-AllInOne.zip \
     && unzip AriaNg-1.1.1-AllInOne.zip \
     && rm -rf AriaNg-1.1.1-AllInOne.zip \
-    && chmod 777 index.html \
+    && chmod 777 index.html 
     #rclone
 RUN cd /root/dl \
     && curl https://rclone.org/install.sh | bash \ 
