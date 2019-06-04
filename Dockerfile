@@ -29,7 +29,7 @@ RUN cd /root/dl \
     && chmod +x run.sh \ 
     #aria2 
     && cd /root \
-    && wget wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/aria2.sh && chmod +x aria2.sh
+    && wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/aria2.sh && chmod +x aria2.sh
     #ssh
 RUN mkdir /var/run/sshd \
     && echo "root:password" | chpasswd \
