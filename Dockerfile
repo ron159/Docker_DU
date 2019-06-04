@@ -26,13 +26,13 @@ RUN cd /root/dl \
     && curl https://rclone.org/install.sh | bash \ 
     && cd /root/dl/conf \
     && chmod 777 autoupload.sh \
+    && chmod +x run.sh \
     #aria2
     && mkdir /root/.aria2 \
     && cd /root/.aria2 \
     && mv /root/dl/conf/aria2.conf . \
     && touch aria2.session\
-    && chmod 777 aria2.session \
-    && chmod +x run.sh
+    && chmod 777 aria2.session
     #ssh
 RUN mkdir /var/run/sshd \
     && echo "root:password" | chpasswd \
