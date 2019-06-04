@@ -1,8 +1,8 @@
 FROM ubuntu:18.04
 
-LABEL AUTHOR=ron<zlronron159@gmail.com>
+LABEL AUTHOR=angaziwa<Telegram@Angaziwa>
 
-WORKDIR /root/dl
+WORKDIR /root
 ADD conf /root/dl/conf
 
 
@@ -14,26 +14,28 @@ RUN buildDeps='curl wget vim aria2 unzip nginx openssh-server' \
     && mkdir /Download \
     && mv /root/dl/conf/nginx.conf /etc/nginx/nginx.conf
     #AriaNg
-RUN mkdir /root/dl/ariang \
-    && cd /root/dl/ariang \
+RUN rm -rf /var/www/html/ \
+    && mkdir /var/www/html \
+    && cd /var/www/html/ \
     && wget https://github.com/mayswind/AriaNg/releases/download/1.1.1/AriaNg-1.1.1-AllInOne.zip \
     && unzip AriaNg-1.1.1-AllInOne.zip \
     && rm -rf AriaNg-1.1.1-AllInOne.zip \
     && chmod 777 index.html \
-    && rm -rf /var/www/html/ \
-    && mkdir /var/www/html \
-    && mv index.html /var/www/html/
     #rclone
 RUN cd /root/dl \
     && curl https://rclone.org/install.sh | bash \ 
     && cd /root/dl/conf \
     && chmod 777 autoupload.sh \
+    #aria2
+    && mkdir /root/.aria2 \
+    && cd /root/.aria2 \
+    && mv /root/dl/conf/aria2.conf . \
     && touch aria2.session\
     && chmod 777 aria2.session \
     && chmod +x run.sh
     #ssh
 RUN mkdir /var/run/sshd \
-    && echo "root:HYDron159+1s" | chpasswd \
+    && echo "root:password" | chpasswd \
     && sed -ri 's/^#?PermitRootLogin\s+.*/PermitRootLogin yes/' /etc/ssh/sshd_config \
     && sed -ri 's/UsePAM yes/#UsePAM yes/g' /etc/ssh/sshd_config
 
