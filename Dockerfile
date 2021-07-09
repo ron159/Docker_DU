@@ -1,6 +1,6 @@
 FROM ubuntu:18.04
 
-LABEL AUTHOR=angaziwa<Telegram@Angaziwa>
+LABEL AUTHOR=ron159
 
 WORKDIR /root
 ADD conf /root/dl/conf
